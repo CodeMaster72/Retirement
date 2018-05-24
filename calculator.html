@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Retirement Calculator</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    </head>
+    <body>
+        <input id="age" placeholder="What's your current age?">
+        <br>
+        <br>
+        <input id="retire" placeholder="What age do you want to retire?">
+        <h1 id="retireyear"></h1>
+        <h1 id="retireage"></h1>
+        <button id="clicky">Results</button>
+
+    <script>
+        
+        $("#clicky").click(function(){
+
+        var uAge = parseInt($("#age").val());
+        var uRetire = parseInt($("#retire").val());
+
+        $("#retireage").append("You can retire in " + (reAge(uAge,uRetire)) + " years.");
+        $("#retireyear").append("The year you can retire is " +reYear(reAge(uAge,uRetire ))+ ".");
+        // $("#retireyear").html(reYear(reAge,uAge,uRetire));
+
+        console.log(reYear(reAge(uAge,uRetire)));
+
+        });
+        
+        function reAge(uAge,uRetire){
+            return uRetire - uAge;
+        };
+        function reYear(reAge,uAge,uRetire){
+            return reAge + 2018;
+        };
+        
+
+    </script>
+
+    </body>   
+</html>
